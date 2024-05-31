@@ -12,8 +12,6 @@ from utils import progress_bar
 from vars import API_ID as api_id
 from vars import API_HASH as api_hash
 from vars import BOT_TOKEN as bot_token
-from vars import OWNER_ID as owner
-from vars import SUDO_USERS as sudo_users
 
 from aiohttp import ClientSession
 from pyromod import listen
@@ -34,28 +32,23 @@ bot = Client(
     bot_token=bot_token,
 )
 
-SUDOERS = filters.user()
 
-for x in sudo_users:
-    SUDOERS.add(int(x))
-if owner not in SUDOERS:
-    SUDOERS.add(int(owner))
 
-@bot.on_message(filters.command(["start"]) & SUDOERS)
+@bot.on_message(filters.command(["start"]))
 async def account_login(bot: Client, m: Message):
-    editable = await m.reply_text(f"BOT MADE BY - TITANIC  [{m.from_user.first_name}](tg://user?id={m.from_user.id})\nGIVE COMMAND - /TITANIC")
+    editable = await m.reply_text(f"Hello [{m.from_user.first_name}](tg://user?id={m.from_user.id})\nPress /Papaji")
 
 
-@bot.on_message(filters.command("stop") & SUDOERS)
+@bot.on_message(filters.command("stop"))
 async def restart_handler(_, m):
-    await m.reply_text("**STOPPED**", True)
+    await m.reply_text("**STOPPED**🚦", True)
     os.execl(sys.executable, sys.executable, *sys.argv)
 
 
 
-@bot.on_message(filters.command(["TITANIC"]) & SUDOERS)
+@bot.on_message(filters.command(["Aarya"]))
 async def account_login(bot: Client, m: Message):
-    editable = await m.reply_text('GIVE ME TXT FILE')
+    editable = await m.reply_text('Send TXT file for download')
     input: Message = await bot.listen(editable.chat.id)
     x = await input.download()
     await input.delete(True)
@@ -112,7 +105,7 @@ async def account_login(bot: Client, m: Message):
     
     
 
-    await editable.edit("**Download By - **")
+    await editable.edit("**𝗘𝘅𝘁𝗿𝗮𝗰𝘁𝗲𝗱 𝗕𝘆 ➤  **")
     input3: Message = await bot.listen(editable.chat.id)
     raw_text3 = input3.text
     await input3.delete(True)
@@ -174,8 +167,8 @@ async def account_login(bot: Client, m: Message):
 
             try:  
                 
-                cc = f'**Vid_id  »** {str(count).zfill(3)}\n\n**Title  »** {name1} {res} TITANIC.mkv\n\n**Batch »** {raw_text0}\n\n**Download by »** {raw_text3}\n\n'
-                cc1 = f'**Vid_id  »** {str(count).zfill(3)}\n\n**Title »** {name1} TITANIC.pdf \n\n**Batch »** {raw_text0}\n\n**Download by »** {raw_text3}\n\n'
+                cc = f'**[▶️] Vid_ID  »** {str(count).zfill(3)}\n\n**Title  »** {name1} {res} 𝐆υℓѕhαη.mkv\n\n**𝐁𝐚𝐭𝐜𝐡 𝐍𝐚𝐦𝐞 ::** {raw_text0}\n\n**𝗘𝘅𝘁𝗿𝗮𝗰𝘁𝗲𝗱 𝗕𝘆 ➤ ** {raw_text3}\n\n'
+                cc1 = f'**[📒] Pdf_ID  »** {str(count).zfill(3)}\n\n**Title »** {name1} 𝐆υℓѕhαη.pdf \n\n**𝐁𝐚𝐭𝐜𝐡 𝐍𝐚𝐦𝐞 ::** {raw_text0}\n\n**𝗘𝘅𝘁𝗿𝗮𝗰𝘁𝗲𝗱 𝗕𝘆 ➤ ** {raw_text3}\n\n'
                 if "drive" in url:
                     try:
                         ka = await helper.download(url, name)
@@ -201,7 +194,7 @@ async def account_login(bot: Client, m: Message):
                         time.sleep(e.x)
                         continue
                 else:
-                    Show = f"**Downloading:-**\n\n**Name :-** `{name}\nQuality - {raw_text2}"
+                    Show = f"**Downloading:-**\n\n**Name :-** `{name}\nQuality - {raw_text2}`\n\n**Url :-** `{url}`\n\n**𝐁𝐨𝐭 𝐌𝐚𝐝𝐞 𝐁𝐲  🔱☆ 𝐆𝐮𝐥𝐬𝐡𝐚𝐧 ☆🔱**"
                     prog = await m.reply_text(Show)
                     res_file = await helper.download_video(url, cmd, name)
                     filename = res_file
@@ -218,7 +211,7 @@ async def account_login(bot: Client, m: Message):
 
     except Exception as e:
         await m.reply_text(e)
-    await m.reply_text(" D O N E ")
+    await m.reply_text("𝐃𝐨𝐧𝐞 𝐁𝐨𝐬𝐬😎")
 
 
 bot.run()
