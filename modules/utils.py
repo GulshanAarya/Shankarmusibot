@@ -186,7 +186,7 @@ async def progress_bar(current, total, reply, start):
 
             try:
 
-                await reply.edit(f'\n `╭─⌯══⟰ 𝐔𝐩𝐥𝐨𝐝𝐢𝐧𝐠 ⟰══⌯──★ \n├⚡ {progress_bar}|﹝{perc}﹞ \n├🚀 Speed » {sp} \n├📟 Processed » {cur}\n├🧲 Size - ETA » {tot} - {eta} \n`├𝐁𝐲 » 𝐀𝐬𝐩𝐢𝐫𝐚𝐧𝐭𝐬 𝐙𝐨𝐧𝐞 🔱\n╰─══ ✪✨ 𝐀𝐬𝐩𝐢𝐫𝐚𝐧𝐭𝐬 𝐙𝐨𝐧𝐞 ✨✪ ══─★\n') 
+                await reply.edit(f'\n `╭─⌯══⟰ 𝐔𝐩𝐥𝐨𝐝𝐢𝐧𝐠 ⟰══⌯──★ \n├⚡ {progress_bar}|﹝{perc}﹞ \n├🚀 Speed » {sp} \n├📟 Processed » {cur}\n├🧲 Size - ETA » {tot} - {eta} \n`├𝗕𝘆 ➤ 𝗚𝘂𝗹𝘀𝗵𝗮𝗻 💖🔱\n╰─══ ✪✨ 𝐀𝐬𝐩𝐢𝐫𝐚𝐧𝐭𝐬 𝐙𝐨𝐧𝐞 ✨✪ ══─★\n') 
             except FloodWait as e:
                 time.sleep(e.x)
 
